@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>IHC</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+    <style>
+      object.pdf {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h1>IHC</h1>
+        </section>
+        <section>
+          <video class="stretch" src="https://s3-us-west-1.amazonaws.com/reta-video-out/IHC_Presentation_Video.1080p.mp4" controls/>
+          <!-- <video> -->
+          <!-- <source data&#45;src="https://s3&#45;us&#45;west&#45;1.amazonaws.com/reta&#45;video&#45;out/IHC_Presentation_Video.1080p.mp4" type="video/mp4" /> -->
+          <!-- </video> -->
+        </section>
+        <section>
+          <a href="https://rbc.retatrust.org/?id=adf8008abfcbfae5827bf6413df5ddcd" target="_blank">Live RBC</a>
+        </section>
+        <section>
+          <h4>Unite Here</h4>
+          <object class="pdf" data="assets/pdf/Unite.Here.Benefits.Center.v03.pdf" type="application/pdf">
+            <p>Unfortunately, we can't display the PDF.
+            <a href="assets/pdf/Unite.Here.Benefits.Center.v03.pdf" target="_blank">Click to view the PDF.</a>
+          </object>
+        </section>
+        <section>
+          <!-- <a href="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf" target="_blank">Cullinary Fund</a> -->
+          <h4>Cullinary Fund</h4>
+          <object class="pdf" data="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf" type="application/pdf">
+            <p>Unfortunately, we can't display the PDF.
+            <a href="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf">Click to view the PDF.</a></p>
+          </object>
+        </section>
+        <section>
+          <a href="http://www.spirezabit.com/reta/mobile/index.html" target="_blank">Reta IHC Flipbook</a>
+        </section>
+        <section>
+          <h3>Digital Toolbox</h3>
+          <img style="border: none; box-shadow: none" src="assets/pdf/Digital Toolbox.png" />
+        </section>
+        <section>
+          <a href="http://www.spirezabit.com/ihc_brochure/mobile/index.html" target="_blank">IHC Brochure Flipbook</a>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        slideNumber: true,
+        previewLinks: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
+</html>

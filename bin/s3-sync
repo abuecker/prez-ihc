@@ -1,0 +1,57 @@
+#!/bin/sh
+set -e
+
+#-------------------------
+# Copy files to the bucket
+#-------------------------
+
+# Sync the 'dist/' directory to the bucket
+aws s3 sync --acl public-read --delete dist/ $AWS_S3_BUCKET
+
+# Copy the text/plain files
+# FILES="SHA TIMESTAMP apiHost"
+# for FILE in $FILES
+# do
+#   echo "- text/plain: $AWS_S3_BUCKET/$FILE"
+#   aws s3 cp $AWS_S3_BUCKET/$FILE $AWS_S3_BUCKET/$FILE \
+#   --metadata-directive REPLACE \
+#   --content-type "text/plain" \
+#   --acl public-read
+# done
+
+# Correct JSON mimetype
+aws s3 cp $AWS_S3_BUCKET/ $AWS_S3_BUCKET/ \
+  --exclude "*" \
+  --include "*.json" \
+  --recursive \
+  --acl public-read \
+  --metadata-directive REPLACE \
+  --content-type "application/json"
+
+#--------------------------------
+# Invalidate the Cloudfront cache
+#--------------------------------
+if test -z $AWS_S3_FQDN; then
+  echo "AWS_S3_FQDN envvar not found.  Skipping Cloudfront cache invalidation"
+  exit
+fi
+
+# enable cli cloudfront preview
+aws configure set preview.cloudfront true
+
+# Get the distribution id
+DISTRIBUTION_ID=$(aws cloudfront list-distributions | \
+  jq ".DistributionList.Items | .[] | \
+  select(.Origins.Items[].DomainName == \"$AWS_S3_FQDN\") | \
+  .Id" -r)
+
+# Invalidate the cache
+if test $DISTRIBUTION_ID; then
+  echo "Found Distrubition ID $DISTRIBUTION_ID for $AWS_S3_FQDN"
+  echo "Invalidating..."
+  aws cloudfront create-invalidation \
+    --distribution-id $DISTRIBUTION_ID \
+    --paths "/*"
+else
+  echo "No Cloudfront distribution found for $AWS_S3_FQDN"
+fi
