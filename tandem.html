@@ -1,0 +1,234 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>AN IHC PRESENTATION</title>
+
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.2/qs.min.js"></script>
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+      function showId(name) {
+        var elem = document.querySelector('#' + name);
+        var classes = elem.getAttribute('class');
+        elem.setAttribute('class', classes.replace('hidden', '').trim());
+      }
+
+      function hideId(name) {
+        var elem = document.querySelector('#' + name);
+        var classes = elem.getAttribute('class');
+        elem.setAttribute('class', classes + ' hidden');
+      }
+
+      if (location.search && location.search.length) {
+        window.DATA = JSON.parse(atob(Qs.parse(location.search.replace('?', '')).d));
+      }
+    </script>
+    <style>
+      object.pdf {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+      }
+
+      a.big {
+        display: block;
+        margin-top: 80px;
+        font-size: 1.3em;
+        color: white;
+        font-weight: bold;
+        cursor: default;
+      }
+
+      .placeholder {
+        font-style: italic !important;
+          text-transform: lowercase;
+      }
+      .placeholder:before {
+        content: "[";
+      }
+      .placeholder:after {
+        content: "]";
+      }
+
+      img {
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .flex {
+        display: flex;
+        position: fixed;
+        top: 0;
+        height: 80vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .clicker {
+        color: #42affa !important;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>AN IHC PRESENTATION</h2>
+          <h3><span style="font-weight: 400">specially designed for</span> <span id="for">Tandem</span></h3>
+          <script>
+            if (DATA.for) {
+              document.querySelector('#for').innerHTML = DATA.for;
+            }
+          </script>
+        </section>
+
+        <section>
+          <h3>Walmart Demo OE 2018</h3>
+          <h4>
+            <a href='https://us3.walmartone.com/pages/health/associate-toolkit/2018/my-benefits/#' target="_blank">Walmart 2018 Home Page</a>
+          </h4>
+        </section>
+
+
+        <section>
+          <h4>
+            <h4 href='https://youtu.be/613E2z7I6AI' target="_blank">Walmart Demo Video</h4>
+            <iframe width="733" height="412" src="https://www.youtube.com/embed/613E2z7I6AI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </h4>
+        </section>
+
+        <section>
+          <h4>
+            <a id='intro' target="_blank">Introducing...</a>
+            <script>
+              document.getElementById('intro')
+                .setAttribute('href', location.origin + '/videoIntro.html');
+            </script>
+          </h4>
+        </section>
+
+        <section>
+          <h4>
+            <a id='tour' target="_blank">RBC Tour</a>
+            <script>
+              document.getElementById('tour')
+                .setAttribute('href', location.origin + '/videoTour.html');
+            </script>
+          </h4>
+        </section>
+
+        <section>
+          <h4>
+            <a href="https://rbc.retatrust.org/?id=adf8008abfcbfae5827bf6413df5ddcd" target="_blank">Live RBC</a>
+          </h4>
+        </section>
+
+        <section>
+          <h4 style="color: #42affa">URL for Live Reta Demo</h4>
+          <h4 style="color: #42affa">for Mobile Applications</h4>
+
+          <a class="big" href="https://rbc-ihc.retatrust.org/mobile.html?id=f366bd59277fe4ae6ffebebe1b998a2b" style="margin-top: 80px">https://goo.gl/p3t1yy</a>
+
+          <!-- <iframe style="margin&#45;top: 80px" width="250" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/70927855&#38;color=%23ff9900&#38;auto_play=false&#38;hide_related=true&#38;show_comments=false&#38;show_user=false&#38;show_reposts=false&#38;show_teaser=false&#38;visual=true"></iframe> -->
+
+          <iframe style="margin&#45;top: 80px" frameborder="0" width="150" height="100" src="//www.dailymotion.com/embed/video/x3v1ekq?sharing-enable=false&queue-enable=false&queue-autoplay-next=false&ui-logo=false" allowfullscreen allow="autoplay"></iframe>
+        </section>
+
+
+        <section>
+          <h4>
+            <a href="http://www.spirezabit.com/reta/mobile/index.html" target="_blank">Reta IHC Flipbook</a>
+          </h4>
+        </section>
+
+
+        <section>
+          <!-- <a href="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf" target="_blank">Cullinary Fund</a> -->
+          <!-- <h4>DOA IHC Homepage</h4> -->
+          <!-- <object class="pdf" data="assets/pdf/DOA Homepage PDF.pdf" type="application/pdf"> -->
+          <!--   <p>Unfortunately, we can't display the PDF. -->
+          <!--   <a href="assets/pdf/DOA Homepage PDF.pdf">Click to view the PDF.</a></p> -->
+          <!-- </object> -->
+          <h4>
+            <a href="https://sketch.cloud/s/wAVQq/all/page-1/1/play">DOA IHC Homepage</a>
+          </h4>
+        </section>
+
+
+        <section>
+          <h4>
+            <a data-preview-link="false" href="http://etf.wi.gov/members/IYC2018/IYC_home.asp">ETF OE SITE 2019</a>
+          </h4>
+        </section>
+
+        <section>
+          <h4 class="clicker" onClick="showId('toolbox')" >Digital Toolbox</h4>
+          <div id="toolbox" class="flex hidden">
+            <img src="assets/pdf/Digital Toolbox.png" onClick="hideId('toolbox')"/>
+          </div>
+        </section>
+
+        <section>
+          <h4>
+            <a href="http://www.spirezabit.com/ihc_brochure/mobile/index.html" target="_blank">IHC Brochure Flipbook</a>
+          </h4>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        history: true,
+        slideNumber: true,
+        previewLinks: true,
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+
+
+      document.querySelectorAll('video').forEach(function(e) {
+        e.onmouseenter = function (e) {
+          e.target.setAttribute("controls", "controls");
+        };
+        e.onmouseleave = function (e) {
+          if (e.target.hasAttribute("controls")) {
+            e.target.removeAttribute("controls");
+          }
+        };
+      });
+    </script>
+  </body>
+</html>
