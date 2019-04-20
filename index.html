@@ -13,12 +13,30 @@
     <link rel="stylesheet" href="lib/css/zenburn.css">
 
     <!-- Printing and PDF exports -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.5.2/qs.min.js"></script>
     <script>
       var link = document.createElement( 'link' );
       link.rel = 'stylesheet';
       link.type = 'text/css';
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
+
+
+      function showId(name) {
+        var elem = document.querySelector('#' + name);
+        var classes = elem.getAttribute('class');
+        elem.setAttribute('class', classes.replace('hidden', '').trim());
+      }
+
+      function hideId(name) {
+        var elem = document.querySelector('#' + name);
+        var classes = elem.getAttribute('class');
+        elem.setAttribute('class', classes + ' hidden');
+      }
+
+      if (location.search && location.search.length) {
+        window.DATA = JSON.parse(atob(Qs.parse(location.search.replace('?', '')).d));
+      }
     </script>
     <style>
       object.pdf {
@@ -28,13 +46,103 @@
         top: 0;
         left: 0;
       }
+
+      a.big {
+        display: block;
+        margin-top: 80px;
+        font-size: 1.3em;
+        color: white;
+        font-weight: bold;
+        cursor: default;
+      }
+
+      .placeholder {
+        font-style: italic !important;
+          text-transform: lowercase;
+      }
+      .placeholder:before {
+        content: "[";
+      }
+      .placeholder:after {
+        content: "]";
+      }
+
+      img {
+        border: none !important;
+        box-shadow: none !important;
+      }
+
+      .hidden {
+        display: none !important;
+      }
+
+      .flex {
+        display: flex;
+        position: fixed;
+        top: 0;
+        height: 80vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .clicker {
+        color: #42affa !important;
+        cursor: pointer;
+      }
+
+      li {
+        margin-bottom: 15px !important;
+        font-size: 0.8em !important;
+      }
     </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
+        <section id="title">
+          <h2>AN IHC PRESENTATION</h2>
+          <script>
+            if (window.DATA && window.DATA.for) {
+              var h3 = document.createElement('h3');;
+              var span = document.createElement('span');
+              span.style.fontWeight = 400;
+              span.innerHTML = 'specially designed for&nbsp;';
+              var spanFor = document.createElement('span');
+              spanFor.innerHTML = DATA.for
+              h3.appendChild(span);
+              h3.appendChild(spanFor);
+              document.querySelector('#title').appendChild(h3);
+            }
+          </script>
+        </section>
+
+        <section class="PEO">
+          <h3>IHC: Brings Unique Advantages<br/> to the PEO Space</h3>
+          <ul>
+            <li>Differentiation in the PEO marketplace with a one-of-a-kind solution</li>
+            <li>Adds an additional profit center opportunity</li>
+            <li>Promotes client satisfaction, client retention and new client acquisition</li>
+            <li>
+              Personalizes content to each individual while branding the
+              experience to the individual company where the employee is placed
+            </li>
+          </ul>
+        </section>
+
         <section>
-          <h1>IHC</h1>
+          <h3>Walmart Demo OE 2018</h3>
+          <h4>
+            <a href='https://us3.walmartone.com/pages/health/associate-toolkit/2018/my-benefits/#' target="_blank">Walmart 2018 Home Page</a>
+          </h4>
+        </section>
+
+
+        <section>
+          <h4>
+            <h4 href='https://youtu.be/613E2z7I6AI' target="_blank">Walmart Demo Video</h4>
+            <iframe width="733" height="412" src="https://www.youtube.com/embed/613E2z7I6AI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          </h4>
         </section>
 
         <section>
@@ -64,21 +172,16 @@
         </section>
 
         <section>
-          <h4>Unite Here</h4>
-          <object class="pdf" data="assets/pdf/Unite.Here.Benefits.Center.v03.pdf" type="application/pdf">
-            <p>Unfortunately, we can't display the PDF.
-            <a href="assets/pdf/Unite.Here.Benefits.Center.v03.pdf" target="_blank">Click to view the PDF.</a>
-          </object>
+          <h4 style="color: #42affa">URL for Live Reta Demo</h4>
+          <h4 style="color: #42affa">for Mobile Applications</h4>
+
+          <a class="big" href="https://rbc-ihc.retatrust.org/mobile.html?id=f366bd59277fe4ae6ffebebe1b998a2b" style="margin-top: 80px">https://goo.gl/p3t1yy</a>
+
+          <!-- <iframe style="margin&#45;top: 80px" width="250" height="100" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/70927855&#38;color=%23ff9900&#38;auto_play=false&#38;hide_related=true&#38;show_comments=false&#38;show_user=false&#38;show_reposts=false&#38;show_teaser=false&#38;visual=true"></iframe> -->
+
+          <iframe style="margin&#45;top: 80px" frameborder="0" width="150" height="100" src="//www.dailymotion.com/embed/video/x3v1ekq?sharing-enable=false&queue-enable=false&queue-autoplay-next=false&ui-logo=false" allowfullscreen allow="autoplay"></iframe>
         </section>
 
-        <section>
-          <!-- <a href="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf" target="_blank">Cullinary Fund</a> -->
-          <h4>Cullinary Fund</h4>
-          <object class="pdf" data="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf" type="application/pdf">
-            <p>Unfortunately, we can't display the PDF.
-            <a href="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf">Click to view the PDF.</a></p>
-          </object>
-        </section>
 
         <section>
           <h4>
@@ -86,9 +189,66 @@
           </h4>
         </section>
 
+
         <section>
-          <h3>Digital Toolbox</h3>
-          <img style="border: none; box-shadow: none" src="assets/pdf/Digital Toolbox.png" />
+          <!-- <a href="assets/pdf/Culinary.Fund.Benefits.Center.v02.pdf" target="_blank">Cullinary Fund</a> -->
+          <!-- <h4>DOA IHC Homepage</h4> -->
+          <!-- <object class="pdf" data="assets/pdf/DOA Homepage PDF.pdf" type="application/pdf"> -->
+          <!--   <p>Unfortunately, we can't display the PDF. -->
+          <!--   <a href="assets/pdf/DOA Homepage PDF.pdf">Click to view the PDF.</a></p> -->
+          <!-- </object> -->
+          <h4>
+            <a href="https://sketch.cloud/s/wAVQq/all/page-1/1/play">DOA IHC Homepage</a>
+          </h4>
+        </section>
+
+
+        <section>
+          <h4 class="clicker" onClick="showId('toolbox')" >Digital Toolbox</h4>
+          <div id="toolbox" class="flex hidden">
+            <img src="assets/pdf/Digital Toolbox.png" onClick="hideId('toolbox')"/>
+          </div>
+        </section>
+
+
+        <section>
+          <h3>IHC: A Review on How it Works</h3>
+          <ul>
+            <li>
+              Our proprietary IHC software platform transparently transforms
+              raw benefit plan administration source code through our API into
+              a personalized, interactive user-friendly benefits and wellness
+              participant communication system with just a sign-on and a click.
+            </li>
+            <li>
+              It dynamically assembles a unique interactive benefits enrollment
+              and year-round informational experience that is personalized to
+              each individual participant based on who they are and where they
+              live and work.
+            </li>
+        </section>
+
+        <section>
+          <h3>IHC: A Review on How it Works</h3>
+          <ul>
+            <li>
+              The IHC software solution doesn’t compete with or replace your
+              existing enrollment or benefits admin systems. And it doesn’t
+              interfere with any ongoing IT transformational initiatives.
+            </li>
+            <li class="PEO">
+              Your customer IHC site can be built to integrate all healthcare,
+              retirement and savings plans, voluntary, paid-time-off and
+              compensation benefits into a single personalized destination for
+              each PEO member as they desire.
+            </li>
+            <li class="noPEO">
+              Your customer IHC site can be built to integrate all healthcare,
+              retirement and savings plans, voluntary, paid-time-off and
+              compensation benefits into a single personalized destination for
+              each insured employee.
+            </li>
+          </ul>
         </section>
 
         <section>
@@ -129,6 +289,18 @@
           }
         };
       });
+
+      console.log('DATA', window.DATA);
+      if (!window.DATA || !window.DATA.showPEO) {
+        document.querySelectorAll('.PEO').forEach(function(elem) {
+          elem.remove();
+        });
+      }
+      if (window.DATA && window.DATA.showPEO) {
+        document.querySelectorAll('.noPEO').forEach(function(elem) {
+          elem.remove();
+        });
+      }
     </script>
   </body>
 </html>
