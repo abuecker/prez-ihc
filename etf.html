@@ -90,6 +90,32 @@
         color: #42affa !important;
         cursor: pointer;
       }
+
+      .pdf-viewer {
+        max-width: 100% !important;
+        max-height: 100% !important;
+      }
+
+      .fullscreen {
+        position: fixed;
+        /* background-color: red; */
+        top: 0;
+        left: 0;
+        width: 100% !important;
+        height: 100% !important;
+        overflow-y: auto;
+      }
+
+      .doa {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        margin: 0 !important;
+        max-width: none !important;
+        max-height: none !important;
+      }
     </style>
   </head>
   <body>
@@ -109,7 +135,7 @@
           <h3>CLIENT SHOWCASE:</h3>
           <h4>
             <a href='https://one.walmart.com/content/uswire/en_us/me/health.html' target="_blank">
-              Walmart Health, Benefit & Total Rewards
+              Walmart Health, Benefits & Total Rewards
 2019 Employee Homepage
           </a>
           </h4>
@@ -118,8 +144,7 @@
 
         <section>
           <h4>
-            <h4 href='https://youtu.be/613E2z7I6AI' target="_blank">Walmart Personalized Portal Tour</h4>
-            <iframe width="733" height="412" src="https://www.youtube.com/embed/613E2z7I6AI?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <a href='assets/video/Walmart2018Overview.mp4' target="_blank">Walmart Personalized Portal Tour</a>
           </h4>
         </section>
 
@@ -149,19 +174,21 @@
             <a href="https://rbc-ihc.retatrust.org/mobile.html?id=f366bd59277fe4ae6ffebebe1b998a2b">
               Live Reta Demo for Mobile Applications
             </a>
+
+            <a class="big" href="https://rbc-ihc.retatrust.org/mobile.html?id=f366bd59277fe4ae6ffebebe1b998a2b" style="margin-top: 80px">https://goo.gl/p3t1yy</a>
           </h4>
         </section>
 
         <section>
           <h4>
-            <a id="testemonial" target="_blank">
+            <a href="assets/video/2017%20Reta%20trustors.mp4" id="testemonial" target="_blank">
               Reta RBC Client Testimonials
             </a>
-            <script>
+            <!-- <script>
               document
                 .getElementById('testemonial')
                 .setAttribute('href', location.origin + '/assets/video/2017%20Reta%20trustors.mp4');
-            </script>
+            </script> -->
           </h4>
 
         </section>
@@ -218,19 +245,64 @@
 
         <section>
           <h3>
+            CLIENT SHOWCASE:
+          </h3>
+          <h4>
+            Personalized Retirement Communications
+          </h4>
+        </section>
+
+        <section>
+          <h3>
             COMPARING AND CONTRASTING:
           </h3>
           <h4>
             <a href="http://etf.wi.gov/members/IYC2019/et-2107home.asp" target="_blank">
-              Current State User Experience.<br/>Near-Future Possibilities.
+              Current-state User Experience.<br/>Near-future Possibilities.
             </a>
           </h4>
         </section>
 
-        <section data-background-image="./assets/img/dot.png" data-background-size="contain"></section>
-        <section data-background-image="./assets/img/doj.png" data-background-size="contain"></section>
-        <section data-background-image="./assets/img/doa.png" data-background-size="contain"></section>
-        <section data-background-image="./assets/img/doc.png" data-background-size="contain"></section>
+        <!-- <section data-background-image="./assets/img/dot.png" data-background-size="contain"></section> -->
+        <section>
+          <div class='fullscreen'>
+            <img class="doa" src="assets/img/dot.png" />
+          </div>
+        </section>
+
+        <!-- <section data-background-image="./assets/img/doj.png" data-background-size="contain"></section> -->
+        <section>
+          <div class='fullscreen'>
+            <img class="doa" src="assets/img/doj.png" />
+          </div>
+        </section>
+
+        <!-- <section data-background-image="./assets/img/doa.png" data-background-size="contain"></section> -->
+        <section>
+          <div class='fullscreen'>
+            <img class="doa" src="assets/img/doa.png" />
+          </div>
+        </section>
+
+        <!-- <section>
+          <div class='fullscreen'>
+            <iframe class="pdf-viewer" src="https://docs.google.com/viewer?url=http://prez-ihc.48s.io/assets/pdf/Wisc.DOA.website.homepage.2019.v08.pdf&embedded=true"
+            frameborder="0"
+            height="100%"
+            width="100%"></iframe>
+          </div>
+        </section> -->
+
+        <!-- <section data-background-image="./assets/img/doc.png" data-background-size="contain"></section> -->
+        <section>
+          <div class='fullscreen'>
+            <img class="doa" src="assets/img/doc.png" />
+          </div>
+        </section>
+
+        <section>
+          <img src="assets/img/SPIREZABITlogo.svg" style="background: none"/>
+        </section>
       </div>
     </div>
 
@@ -245,6 +317,7 @@
         history: true,
         slideNumber: true,
         previewLinks: true,
+        transition: 'fade',
         dependencies: [
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
