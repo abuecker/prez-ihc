@@ -116,6 +116,41 @@
         max-width: none !important;
         max-height: none !important;
       }
+
+      .modal-wrapper {
+        display: none !important;
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+      }
+
+      .modal {
+        position: relative;
+        width: 300px;
+        height: 125px;
+        top: 100px;
+        border: 1px solid #9c9c9c !important;
+        border-radius: 4px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding: 1em !important;
+        box-sizing: border-box;
+        z-index: 9999;
+        background-color: black;
+        font-size: 0.35em !important;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+        box-shadow: 0 8px 20px 0 rgba(20, 0, 0, 0.8);
+      }
+
+      button {
+        font-size: 0.65em;
+        border-radius: 4px;
+      }
     </style>
   </head>
   <body>
@@ -144,7 +179,11 @@
 
         <section>
           <h4>
-            <a href='assets/video/Walmart2018Overview.mp4' target="_blank">Walmart Personalized Portal Tour</a>
+            <a id="walmart" target="_blank">Walmart Personalized Portal Tour</a>
+            <script>
+              document.getElementById('walmart')
+                .setAttribute('href', location.origin + '/assets/video/Walmart2018Overview.mp4');
+            </script>
           </h4>
         </section>
 
@@ -153,7 +192,7 @@
             <a id='intro' target="_blank">Introducing...</a>
             <script>
               document.getElementById('intro')
-                .setAttribute('href', location.origin + '/videoIntro.html');
+                .setAttribute('href', location.origin + '/assets/video/IHC_2_6_18.1080p.mp4');
             </script>
           </h4>
         </section>
@@ -181,14 +220,14 @@
 
         <section>
           <h4>
-            <a href="assets/video/2017%20Reta%20trustors.mp4" id="testemonial" target="_blank">
+            <a id="testemonial" target="_blank">
               Reta RBC Client Testimonials
             </a>
-            <!-- <script>
+            <script>
               document
                 .getElementById('testemonial')
                 .setAttribute('href', location.origin + '/assets/video/2017%20Reta%20trustors.mp4');
-            </script> -->
+            </script>
           </h4>
 
         </section>
@@ -241,6 +280,7 @@
               Personalized Print for RBC OE
             </a>
           </h4>
+
         </section>
 
         <section>
@@ -256,11 +296,40 @@
           <h3>
             COMPARING AND CONTRASTING:
           </h3>
-          <h4>
-            <a href="http://etf.wi.gov/members/IYC2019/et-2107home.asp" target="_blank">
-              Current-state User Experience.<br/>Near-future Possibilities.
-            </a>
+
+          <h4 onclick="showModal()" style="cursor: pointer !important; color: #42affa;">
+            Current-state User Experience.<br/>Near-future Possibilities.
           </h4>
+
+          <div class="modal-wrapper">
+            <div class="modal">
+              <div class="modal-text">
+                This will open a new tab.<br/>
+                Close the tab to return to the presentation.
+              </div>
+              <div style="text-align: right; display: flex; justify-content: space-between">
+                <button onclick="hideModal()">Cancel</button>
+                <button onclick="openEtfHome()">Ok</button>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            function showModal(text, onConfirm, onCancel) {
+              console.log('SHOW');
+              const elem = document.querySelector('.modal-wrapper')
+              elem.setAttribute('style', 'display: block !important');
+            }
+
+            function hideModal() {
+              document.querySelector('.modal-wrapper').removeAttribute('style');
+            }
+
+            function openEtfHome() {
+              hideModal();
+              window.open('http://etf.wi.gov/members/IYC2019/et-2107home.asp', false);
+            }
+          </script>
         </section>
 
         <!-- <section data-background-image="./assets/img/dot.png" data-background-size="contain"></section> -->
@@ -303,7 +372,9 @@
         <section>
           <img src="assets/img/SPIREZABITlogo.svg" style="background: none"/>
         </section>
+
       </div>
+
     </div>
 
     <script src="lib/js/head.min.js"></script>
