@@ -92,6 +92,8 @@
       }
 
       .pdf-viewer {
+        width: 100% !important;
+        height: 100% !important;
         max-width: 100% !important;
         max-height: 100% !important;
       }
@@ -234,20 +236,51 @@
 
         <section>
           <h3>
-            ABOUT OUR PROPRIETARY TECHNOLOGY:
+            ABOUT OUR PROPRIETARY TECHNOLOGY
           </h3>
-          <h4>
-            Without Spilling the Secret Sauce
-          </h4>
+        </section>
+
+        <section>
+          <h3>TECHNOLOGY OVERVIEW</h3>
+          <ul>
+            <li>REST API for easy integration</li>
+            <li>Ephimeral Data</li>
+            <li>Data encrypted in transit and at rest</li>
+            <li>Microservice Architecture</li>
+            <li>Curated data set</li>
+          </ul>
           <aside class="notes">
-            SCHEMA
-            EDITOR
-            ADMIN
-            SEQUENCE DIAGRAMS
-            WORKING OFF LEGACY SYSTEMS
-            MICROSERVICE ARCHITECTURE
-            CUSTOM/ADDITIONAL UIs
+            * Representational State Transfer, how the web works
+            * "Easy" Integreation with legacy systems
+            * We don't store PII, but still practice encryption
+            * CUSTOM/ADDITIONAL UIs
           </aside>
+        </section>
+
+        <section>
+          <h3>INTEGRATION OVERVIEW</h3>
+          <img  class="stretch" src="assets/img/ihc-integration.svg" style="background-color: white; padding: 16px; box-sizing: border-box"/>
+        </section>
+
+        <section>
+          <h3>Tools</h3>
+          <ul>
+            <li> 
+              <a href="http://rbc-schema.48s.io/" target="_blank">
+                Detailed Schema with Examples
+              </a>
+            </li>
+            <li> 
+              <a href="https://rbc-ihc.retatrust.org/_editor" target="_blank">
+                Interactive Playground
+              </a>
+            </li>
+            <li> 
+              <a href="https://admin.ihc.48s.io/clients" target="_blank">
+                Administration
+              </a>
+            </li>
+          </ul>
         </section>
 
         <section>
@@ -291,6 +324,36 @@
             Personalized Retirement Communications
           </h4>
         </section>
+
+        <section style="padding: 0">
+          <img class="stretch" src="assets/img/spire/Spire Financial Overview Slides.001.png" style="margin: 0"/>
+        </section>
+
+        <section style="padding: 0">
+          <img class="stretch" src="assets/img/spire/Spire Financial Overview Slides.002.png" style="margin: 0"/>
+        </section>
+
+        <section style="padding: 0">
+          <a href="https://www.adprsportal.com">
+            <img class="stretch" src="assets/img/spire/Spire Financial Overview Slides.003.png" style="margin: 0"/>
+          </a>
+        </section>
+
+        <section style="padding: 0">
+          <img class="stretch" src="assets/img/spire/Spire Financial Overview Slides.004.png" style="margin: 0"/>
+        </section>
+
+        <section style="padding: 0">
+          <img class="stretch" src="assets/img/spire/Spire Financial Overview Slides.005.png" style="margin: 0"/>
+        </section>
+
+        <section>
+          <div class='fullscreen' style="overflow: hidden">
+            <iframe class="pdf-viewer" src="https://docs.google.com/viewer?url=http://prez-ihc.48s.io/assets/pdf/On-Target_Kit_Sample_SpireZabit.pdf&embedded=true"
+            frameborder="0"></iframe>
+          </div>
+        </section>
+
 
         <section>
           <h3>
@@ -348,19 +411,11 @@
 
         <!-- <section data-background-image="./assets/img/doa.png" data-background-size="contain"></section> -->
         <section>
-          <div class='fullscreen'>
+          <div class='fullscreen' style="height: 88% !important">
             <img class="doa" src="assets/img/doa.png" />
           </div>
         </section>
 
-        <!-- <section>
-          <div class='fullscreen'>
-            <iframe class="pdf-viewer" src="https://docs.google.com/viewer?url=http://prez-ihc.48s.io/assets/pdf/Wisc.DOA.website.homepage.2019.v08.pdf&embedded=true"
-            frameborder="0"
-            height="100%"
-            width="100%"></iframe>
-          </div>
-        </section> -->
 
         <!-- <section data-background-image="./assets/img/doc.png" data-background-size="contain"></section> -->
         <section>
@@ -393,7 +448,7 @@
           { src: 'plugin/markdown/marked.js' },
           { src: 'plugin/markdown/markdown.js' },
           { src: 'plugin/notes/notes.js', async: true },
-          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
         ]
       });
 

@@ -1,5 +1,5 @@
 dist: clean
-	cp -prv *.html css js lib plugin assets video dist/
+	cp -prv *.html css js lib plugin assets dist/
 
 clean:
 	rm -rf dist
